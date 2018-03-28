@@ -8,3 +8,34 @@
   - EJS files
   - Installing needed technologies
   - Folder structure  
+  
+  - index.ejs
+    - List all the events.
+      - Show date, type and distance.
+    - Button to add event.
+    - ???Button to remove event???
+    - ???Searchable by date and/or type???
+  
+  - show.ejs
+    - Shows all info about the event.
+      - Date, type, venue, distance, time and description.
+    - Button to edit event.
+    - ???Button to remove event???
+    
+  - edit.ejs
+    - Shows a form
+      - Same as new.ejs
+    - Shows all info.
+    - Can change the contents of each field.
+    - Button to save changes.
+    
+  - new.ejs
+    - Shows a new form
+    - Date picker???
+    - Time element???
+    - Text box
+      - Event type
+      - Venue
+      - distance
+    - Text area
+      - Description about event

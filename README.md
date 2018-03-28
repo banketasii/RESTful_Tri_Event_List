@@ -20,7 +20,7 @@
     - Description about event
   - App Displays
     - Landing Page
-      - Date , event type
+      - Date , event type and distance
       - ???Search option by date and or event type???
     - Event Show Page
       - Date, event type, event venue, distance, time and description
@@ -82,6 +82,8 @@
 * Application File Structure
 - root\
   + app.js
+  + projectTODOlist.txt
+  + README.md  
   - public\
     - css\
       + app.css
