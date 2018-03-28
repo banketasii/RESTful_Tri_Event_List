@@ -1,0 +1,10 @@
+@Complete
+
+
+@Incomplete
+  - HTML file
+  - CSS file
+  - JS files
+  - EJS files
+  - Installing needed technologies
+  - Folder structure  

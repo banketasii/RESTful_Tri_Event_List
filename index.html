@@ -1,0 +1,72 @@
+<!-- Tri Event List Project -->
+
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>TRI Event List</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0">
+    
+    <!-- Bootstrap V4 CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
+    
+    <!-- Custom CSS file -->
+		<link type="text/css" rel="stylesheet" href="assets/css/trieventlist.css"> 
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Coda:400,800" rel="stylesheet">
+    
+	</head>
+
+	<body>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-1"></div>
+        <div class="col-12 col-lg-10">
+          <div id="event-lstbox">
+            <h1 id="event-lstbox-header">TRI Event List<span class="add-event-btn"><i class="fas fa-plus-circle"></i></span></h1>
+            <input type="text" id="event-lstbox-txtbox" placeholder="Add New Event"> 
+
+            <ul>
+              <li><span class="del-event-btn"><i class="fas fa-trash-alt"></i></span> mm/dd/yy - Swim - distance - time<img class="event-icon img-fluid" id="swimIcon"></li>
+              <li><span class="del-event-btn"><i class="fas fa-trash-alt"></i></span> mm/dd/yy - Jog - distance - time<img class="event-icon img-fluid" id="runIcon"></li>
+              <li><span class="del-event-btn"><i class="fas fa-trash-alt"></i></span> mm/dd/yy - Bike - distance -   time<img class="event-icon img-fluid" id="bikeIcon"></li>
+              <li><span class="del-event-btn"><i class="fas fa-trash-alt"></i></span> mm/dd/yy - Sprint Tri - distance -   time<img class="event-icon img-fluid" id="finishIcon"></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-12 col-lg-1"></div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-lg-1"></div>
+        <div class="col-12 col-lg-10">
+          <div id="footer-content">        
+            <p id="motto" class="h1">Keep on TRI-ing</p>
+            <img class="footer-img img-fluid" id="swim">
+            <img class="footer-img img-fluid" id="bike">
+            <img class="footer-img img-fluid" id="run">    
+            <div class="credit">
+              <a href="https://icons8.com">Icon pack by Icons8</a>
+              <a href="https://pixabay.com/">Images by pixabay</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-1"></div>
+      </div>
+    </div>
+    <!-- jQuery V3.3.1 CDN -->
+		<script
+    src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    
+    <!-- Bootstrap V4 js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <!-- Font Awesome V5 CDN -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    
+    <!-- Custom js file -->
+		<script type="text/javascript" src="assets/js/trieventlist.js"></script>
+	</body>
+</html>

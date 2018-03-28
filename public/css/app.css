@@ -1,0 +1,176 @@
+/* Tri Event List Project CSS */
+
+/* CSS HTML tag selectors */
+html, body{
+  /*text-align: center;*/
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Coda';
+}
+
+body{
+  background: 
+    -webkit-linear-gradient(to right, #ff0000 25%, #ffffff 50%, #0000ff 75%);
+  background: 
+    -moz-linear-gradient(to right, #ff0000 25%, #ffffff 50%, #0000ff 75%);
+  background: 
+    -ms-linear-gradient(to right, #ff0000 25%, #ffffff 50%, #0000ff 75%);
+  background: 
+    -o-linear-gradient(to right, #ff0000 25%, #ffffff 50%, #0000ff 75%);
+  background: 
+    linear-gradient(to right, #ff0000 25%, #ffffff 50%, #0000ff 75%);
+}
+
+ul{
+ list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  background-color: #fff;
+  height: 40px;
+  line-height: 40px;
+  border: 2px solid silver;
+  border-radius: 10px;
+  overflow: visible;
+  float: right;
+  width: 100%;
+}
+
+li:nth-child(2n){
+  background-color: #f7f7f7;
+}
+
+li:hover .del-event-btn{
+  width: 40px;
+  opacity: 1;
+}
+
+img{
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat no-repeat;
+}
+
+a{
+  display: block;
+  color: black;
+}
+
+
+/* CSS HTML class selectors */
+.container{
+  width: 100%;
+  height: 100%;
+  margin-top: 10%;
+}
+
+.add-event-btn{
+  float: right;
+  margin-top: 5px;
+}
+
+.del-event-btn{
+  height: 40px;
+  width: 0;
+  background-color: #e74c3c;
+  margin-right: 10px;
+  text-align: center;
+  color: #fff;
+  display: inline-block;
+  border-radius: 10px;
+  transition: 0.2s linear;
+  opacity: 0;
+}
+
+.event-icon{
+  float: right;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  margin-top: 2px;
+}
+
+.footer-img{
+  width: 150px;
+  height: 150px;  
+  border: 2px solid blue;
+  border-radius: 10px;
+}
+
+.credit{
+  margin-top: 100px;
+}
+
+/* CSS HTML id selectors */
+#event-lstbox{
+  width: 50%;
+  margin-left: 25%;
+  border-radius: 10px;
+}
+
+#event-lstbox-header{
+  border: 2px solid blue;
+  border-radius: 10px;
+  margin: 0;
+  text-align: center;
+}
+
+#event-lstbox-txtbox{
+  font-size: 18px;
+  background-color: #f7f7f7;
+  width: 100%;
+  border-radius: 10px;
+}
+
+#event-lstbox-txtbox:focus{
+  background-color: #fff;
+  border: 2px solid red;
+  outline: none;
+}
+
+#runIcon{
+  background-image: url("../imgs/iconRun.svg");
+}
+
+#swimIcon{
+  background-image: url("../imgs/iconSwim.svg");
+}
+
+#bikeIcon{
+  background-image: url("../imgs/iconBike.svg");
+}
+
+#finishIcon{
+  background-image: url("../imgs/iconFinish.svg");
+}
+
+#footer-content{
+  text-align: center;
+  margin-top: 10%;
+}
+
+#motto{
+  width: 66%;
+  margin: auto;
+  border: 2px solid blue;
+  border-radius: 10px;
+}
+
+#swim{
+  background-image: url(../imgs/imageSwim.png);  
+}
+
+#bike{
+  background-image: url(../imgs/imageBike.png);  
+}
+
+#run{
+  background-image: url(../imgs/imageRun.png);  
+}
