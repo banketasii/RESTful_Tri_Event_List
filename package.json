@@ -1,0 +1,25 @@
+{
+  "name": "300_restful_tri_event_list",
+  "version": "1.0.0",
+  "description": "RESTful Tri Event List",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/banketasii/RESTful_Tri_Event_List.git"
+  },
+  "author": "George Banketas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/banketasii/RESTful_Tri_Event_List/issues"
+  },
+  "homepage": "https://github.com/banketasii/RESTful_Tri_Event_List#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.11.1"
+  }
+}
