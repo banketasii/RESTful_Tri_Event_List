@@ -1,10 +1,17 @@
 @Complete
-
+  - Installed express
+  - JS files
+    - app.js
+      - Server Listener
+      
 
 @Incomplete
   - HTML file
   - CSS file
-  - JS files
+  - JS files - Plain js.  No libraries.
+    - Frontend js
+    - Server js
+      - Routes
   - EJS files
   - Installing needed technologies
   - Folder structure  
