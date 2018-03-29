@@ -3,8 +3,13 @@
   - JS files
     - app.js
       - Server Listener
-      
-
+      - Basic Routes
+        - Index
+        - Show
+        - New
+        - Edit
+        - *** These routes only display plain text for right now.  The ejs files have not been built yet.
+        
 @Incomplete
   - HTML file
   - CSS file
