@@ -6,7 +6,7 @@
       <span class="del-event-btn">
   <!--      <i class="fas fa-trash-alt"></i>-->
       </span> 
-      <%= events[i]["date"] %> - <%= events[i]["type"] %> - <%= events[i]["distance"] %>
+      <%= events[i]["date"].toLocaleDateString() %> :: <%= events[i]["type"] %> :: <%= events[i]["distance"] %> mi
   <!--    <img class="event-icon img-fluid" id="swimIcon">-->
     </li>
   <% } %>
