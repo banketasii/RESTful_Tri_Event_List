@@ -1,0 +1,13 @@
+<h1>INDEX.EJS</h1>
+
+<ul>
+  <% for(let i = 0; i < events.length; i++) { %>
+    <li>
+      <span class="del-event-btn">
+  <!--      <i class="fas fa-trash-alt"></i>-->
+      </span> 
+      <%= events[i]["date"] %> - <%= events[i]["type"] %> - <%= events[i]["distance"] %>
+  <!--    <img class="event-icon img-fluid" id="swimIcon">-->
+    </li>
+  <% } %>
+</ul>

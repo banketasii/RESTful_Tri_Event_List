@@ -1,5 +1,7 @@
 @Complete
-  - Installed express
+  - Installed techs
+    - express
+    - ejs
   - JS files
     - app.js
       - Server Listener
