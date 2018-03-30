@@ -17,9 +17,11 @@
   },
   "homepage": "https://github.com/banketasii/RESTful_Tri_Event_List#readme",
   "dependencies": {
+    "ejs": "^2.5.8",
     "express": "^4.16.3"
   },
   "devDependencies": {
-    "@types/express": "^4.11.1"
+    "@types/express": "^4.11.1",
+    "@types/node": "^9.6.1"
   }
 }
