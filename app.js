@@ -5,22 +5,23 @@ let express = require('express');
 let app = express();
 //Set up the app to fully qualify .ejs file extension
 app.set("view engine", "ejs");
+//Test data
+let date1 = new Date(2017, 8, 4, 0, 45, 5);
+let date2 = new Date(2017, 9, 11, 7, 23, 54);
 let events = [
     {
-        date: "08/03/13",
+        date: date1,
         type: "Sprint Tri",
         venue: "Lake Blackshear",
         distance: 13.1,
-        time: "00:45:12",
-        description: "Need to work on transitions"
+        notes: "Need to work on transitions"
     },
     {
-        date: "08/03/14",
-        type: "Run",
-        venue: "Lake Blackshear",
-        distance: 13.1,
-        time: "00:40:03",
-        description: "Better"
+        date: date2,
+        type: "Bike",
+        venue: "Cheehaw Park",
+        distance: 100,
+        notes: "Need work on hills"
     }
 ];
 //RESTful Routes
@@ -42,7 +43,8 @@ app.route("/events/new")
 //*** Route - Show
 app.route("/events/:id")
     .get((req, res) => {
-    res.send("This is the tri events list show route!");
+    //  res.send("This is the tri events list show route!");
+    res.render("show", { event: events[0] });
 });
 //*** Route - Edit
 app.route("/events/:id/edit")
