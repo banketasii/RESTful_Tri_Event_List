@@ -6,8 +6,8 @@ let app = express();
 //Set up the app to fully qualify .ejs file extension
 app.set("view engine", "ejs");
 //Test data
-let date1 = new Date(2017, 8, 4, 0, 45, 5);
-let date2 = new Date(2017, 9, 11, 7, 23, 54);
+let date1 = new Date(2017, 7, 4, 0, 45, 5);
+let date2 = new Date(2017, 8, 23, 7, 23, 54);
 let events = [
     {
         date: date1,
@@ -38,19 +38,17 @@ app.route("/events")
 //*** Route - New
 app.route("/events/new")
     .get((req, res) => {
-    //  res.send("This is the tri events list new route!");
     res.render("new");
 });
 //*** Route - Show
 app.route("/events/:id")
     .get((req, res) => {
-    //  res.send("This is the tri events list show route!");
     res.render("show", { event: events[0] });
 });
 //*** Route - Edit
 app.route("/events/:id/edit")
     .get((req, res) => {
-    res.send("This is the tri events list edit route!");
+    res.render("edit", { event: events[0] });
 });
 //*** Route - Catch-All
 app.route("*")
