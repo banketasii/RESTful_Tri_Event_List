@@ -38,7 +38,8 @@ app.route("/events")
 //*** Route - New
 app.route("/events/new")
     .get((req, res) => {
-    res.send("This is the tri events list new route!");
+    //  res.send("This is the tri events list new route!");
+    res.render("new");
 });
 //*** Route - Show
 app.route("/events/:id")
