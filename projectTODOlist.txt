@@ -42,6 +42,7 @@
     - Shows all info.
     - Can change the contents of each field.
     - Button to save changes.
+    - Refactor date code.
     
   - new.ejs
     - Shows a new form
