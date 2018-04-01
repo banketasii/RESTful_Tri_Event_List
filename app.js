@@ -1,10 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 //Setting up the app
-let express = require('express');
+let express = require("express");
+let bodyParser = require("body-parser");
 let app = express();
 //Set up the app to fully qualify .ejs file extension
 app.set("view engine", "ejs");
+//Set up the app to serve contents of public\
+app.use(express.static('public'));
+//Set up the app to use body-parser
+app.use(bodyParser.urlencoded({ extended: true }));
 //Test data
 let date1 = new Date(2017, 7, 4, 0, 45, 5);
 let date2 = new Date(2017, 8, 23, 7, 23, 54);
@@ -29,11 +34,34 @@ app.route("/")
     .get((req, res) => {
     res.redirect("/events");
 });
-//*** Route - Index
+//*** Route - Index, Create
 app.route("/events")
     .get((req, res) => {
-    //  res.send("This is the tri events list index route!");
     res.render("index", { events: events });
+})
+    .post((req, res) => {
+    let date = req.body.event.date;
+    let dateArray = date.split('-');
+    let year = parseInt(dateArray[0]);
+    let month = parseInt(dateArray[1]);
+    let day = parseInt(dateArray[2]);
+    let hours = parseInt(req.body.event.hours);
+    let minutes = parseInt(req.body.event.minutes);
+    let seconds = parseInt(req.body.event.seconds);
+    let newDate = new Date(year, month, day, hours, minutes, seconds);
+    let type = req.body.event.type;
+    let venue = req.body.event.venue;
+    let distance = parseInt(req.body.event.distance);
+    let notes = req.body.event.notes;
+    let newEvent = {
+        date: newDate,
+        type: type,
+        venue: venue,
+        distance: distance,
+        notes: notes
+    };
+    events.push(newEvent);
+    res.redirect("/events");
 });
 //*** Route - New
 app.route("/events/new")
