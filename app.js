@@ -40,6 +40,7 @@ app.route("/events")
     res.render("index", { events: events });
 })
     .post((req, res) => {
+    //@TODO - Need to refoactor this.  I am sure this will not be the only place this code is needed
     let date = req.body.event.date;
     let dateArray = date.split('-');
     let year = parseInt(dateArray[0]);
