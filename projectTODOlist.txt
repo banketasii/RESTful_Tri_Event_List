@@ -2,6 +2,7 @@
   - Installed techs
     - express
     - ejs
+    - body-parser
   - JS files
     - app.js
       - Server Listener
