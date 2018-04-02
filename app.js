@@ -78,7 +78,7 @@ app.route("/events/:id")
     res.render("show", { event: events[0] });
 })
     .put((req, res) => {
-    res.redirect("/events/lasdfkjoqiwrue");
+    res.redirect("/events/<some_id>");
 });
 //*** Route - Edit
 app.route("/events/:id/edit")

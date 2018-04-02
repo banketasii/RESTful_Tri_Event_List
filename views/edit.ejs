@@ -26,7 +26,7 @@
   
   eventDate = year + "-" + month + "-" + day;
 %>
-<form action="/events/askdjfhlashf?_method=PUT" method="POST">
+<form action="/events/<some_id>?_method=PUT" method="POST">
   <div>
     <label>Date : </label>
     <input type="date" name="event[date]" value="<%= eventDate %>">

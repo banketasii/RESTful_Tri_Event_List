@@ -1,5 +1,9 @@
 <h1>INDEX.EJS</h1>
 
+<form action="/events/new" method="GET">
+  <button type="submit">New Event</button>
+</form>
+
 <ul>
   <% for(let i = 0; i < events.length; i++) { %>
     <li>
@@ -8,6 +12,8 @@
       </span> 
       <%= events[i]["date"].toLocaleDateString() %> :: <%= events[i]["type"] %> :: <%= events[i]["distance"] %> mi
   <!--    <img class="event-icon img-fluid" id="swimIcon">-->
+      <a href="/events/<some_id>">View Event</a>
     </li>
   <% } %>
 </ul>
+
