@@ -26,39 +26,40 @@
   
   eventDate = year + "-" + month + "-" + day;
 %>
+<form action="/events/askdjfhlashf?_method=PUT" method="POST">
+  <div>
+    <label>Date : </label>
+    <input type="date" name="event[date]" value="<%= eventDate %>">
+  </div>
 
-<div>
-  <label>Date : </label>
-  <input type="date" name="event[date]" value="<%= eventDate %>">
-</div>
+  <div>
+    <label>Type : </label>
+    <input type="text" name="event[type]" value="<%= event['type'] %>">
+  </div>
 
-<div>
-  <label>Type : </label>
-  <input type="text" name="event[type]" value="<%= event['type'] %>">
-</div>
+  <div>
+    <label>Venue : </label>
+    <input type="text" name="event[venue]" value="<%= event['venue'] %>">
+  </div>
 
-<div>
-  <label>Venue : </label>
-  <input type="text" name="event[venue]" value="<%= event['venue'] %>">
-</div>
+  <div>
+    <label>Distance : </label>
+    <input type="text" name="event[distance]" value="<%= event['distance'] %>">
+  </div>
 
-<div>
-  <label>Distance : </label>
-  <input type="text" name="event[distance]" value="<%= event['distance'] %>">
-</div>
+  <div>
+    <label>Time Completed : </label>
+    <label>Hours</label>
+    <input type="text" name="event[hours]" value="<%= hours %>">
+    <label>Minutes</label>
+    <input type="text" name="event[minutes]" value="<%= minutes %>">
+    <label>Seconds</label>
+    <input type="text" name="event[seconds]" value="<%= seconds %>">
+  </div>
 
-<div>
-  <label>Time Completed : </label>
-  <label>Hours</label>
-  <input type="text" name="event[hours]" value="<%= hours %>">
-  <label>Minutes</label>
-  <input type="text" name="event[minutes]" value="<%= minutes %>">
-  <label>Seconds</label>
-  <input type="text" name="event[seconds]" value="<%= seconds %>">
-</div>
-
-<div>
-  <label>Notes : </label>
-  <textarea name="event[notes]"><%= event["notes"] %></textarea>
-</div>
-
+  <div>
+    <label>Notes : </label>
+    <textarea name="event[notes]"><%= event["notes"] %></textarea>
+  </div>
+  <button type="submit">Submit</button>
+</form>

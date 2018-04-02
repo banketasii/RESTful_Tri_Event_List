@@ -1,4 +1,5 @@
 <h1>SHOW.EJS</h1>
+
 <label>Event Date: </label>
 <%= event["date"].toLocaleDateString() %>
 
@@ -28,3 +29,6 @@
 <%= event["notes"] %>
 
 <p></p>
+<form action="/events/kasdjhfkjasdhf/edit" method="GET">
+  <button type="submit">Update</button>
+</form>

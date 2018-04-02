@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 //Setting up the app
 let express = require("express");
 let bodyParser = require("body-parser");
+let methodOverride = require("method-override");
 let app = express();
 //Set up the app to fully qualify .ejs file extension
 app.set("view engine", "ejs");
@@ -10,6 +11,8 @@ app.set("view engine", "ejs");
 app.use(express.static('public'));
 //Set up the app to use body-parser
 app.use(bodyParser.urlencoded({ extended: true }));
+//Set up the app to use method-override
+app.use(methodOverride("_method"));
 //Test data
 let date1 = new Date(2017, 7, 4, 0, 45, 5);
 let date2 = new Date(2017, 8, 23, 7, 23, 54);
@@ -69,10 +72,13 @@ app.route("/events/new")
     .get((req, res) => {
     res.render("new");
 });
-//*** Route - Show
+//*** Route - Show, Update
 app.route("/events/:id")
     .get((req, res) => {
     res.render("show", { event: events[0] });
+})
+    .put((req, res) => {
+    res.redirect("/events/lasdfkjoqiwrue");
 });
 //*** Route - Edit
 app.route("/events/:id/edit")

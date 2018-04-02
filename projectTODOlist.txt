@@ -3,6 +3,7 @@
     - express
     - ejs
     - body-parser
+    - method-override
     
   - JS files
     - app.js
@@ -13,6 +14,7 @@
         - New
         - Edit
         - Create
+        - Update
         
   - EJS files  
     - index.ejs
@@ -49,7 +51,6 @@
     - app.js
       - Add db
       - RESTful Routes
-        - Update
         - Destroy
 
   - Installing needed technologies
