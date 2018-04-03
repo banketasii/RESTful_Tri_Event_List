@@ -65,6 +65,30 @@ let Event = mongoose.model("Event", eventSchema);
 //        notes: "Need work on hills"
 //      }
 //    ];
+function ParseEvent(event) {
+    //This method is needed due to the date and time
+    let date = event.date;
+    let dateArray = date.split('-');
+    let year = parseInt(dateArray[0]);
+    let month = parseInt(dateArray[1]);
+    let day = parseInt(dateArray[2]);
+    let hours = parseInt(event.hours);
+    let minutes = parseInt(event.minutes);
+    let seconds = parseInt(event.seconds);
+    let newDate = new Date(year, month, day, hours, minutes, seconds);
+    let type = event.type;
+    let venue = event.venue;
+    let distance = parseInt(event.distance);
+    let notes = event.notes;
+    let newEvent = {
+        date: newDate,
+        type: type,
+        venue: venue,
+        distance: distance,
+        notes: notes
+    };
+    return newEvent;
+}
 //RESTful Routes
 app.route("/")
     .get((req, res) => {
@@ -87,26 +111,31 @@ app.route("/events")
 })
     .post((req, res) => {
     //@TODO - Need to refactor this.  I am sure this will not be the only place this code is needed
-    let date = req.body.event.date;
-    let dateArray = date.split('-');
-    let year = parseInt(dateArray[0]);
-    let month = parseInt(dateArray[1]);
-    let day = parseInt(dateArray[2]);
-    let hours = parseInt(req.body.event.hours);
-    let minutes = parseInt(req.body.event.minutes);
-    let seconds = parseInt(req.body.event.seconds);
-    let newDate = new Date(year, month, day, hours, minutes, seconds);
-    let type = req.body.event.type;
-    let venue = req.body.event.venue;
-    let distance = parseInt(req.body.event.distance);
-    let notes = req.body.event.notes;
-    let newEvent = {
-        date: newDate,
-        type: type,
-        venue: venue,
-        distance: distance,
-        notes: notes
-    };
+    //  let date: string = req.body.event.date;
+    //  let dateArray: string[] = date.split('-');
+    //  let year : number = parseInt(dateArray[0]);
+    //  let month : number = parseInt(dateArray[1]);
+    //  let day : number = parseInt(dateArray[2]);
+    //  let hours: number = parseInt(req.body.event.hours);
+    //  let minutes: number = parseInt(req.body.event.minutes);
+    //  let seconds: number = parseInt(req.body.event.seconds);
+    //  let newDate: Date = new Date(year, month, day, hours, minutes, seconds);
+    //  
+    //  let type: string = req.body.event.type;
+    //  let venue: string = req.body.event.venue;
+    //  let distance: number = parseInt(req.body.event.distance);
+    //  
+    //  let notes: string = req.body.event.notes;
+    //    
+    //  let newEvent: I_Event = {
+    //    date: newDate,
+    //    type: type,
+    //    venue: venue,
+    //    distance: distance,
+    //    notes: notes
+    //  };
+    //  
+    let newEvent = ParseEvent(req.body.event);
     Event.create(newEvent, (err, event) => {
         if (err) {
             console.log("There was an error creating/adding event");
@@ -141,35 +170,16 @@ app.route("/events/:id")
     });
 })
     .put((req, res) => {
-    let date = req.body.event.date;
-    let dateArray = date.split('-');
-    let year = parseInt(dateArray[0]);
-    let month = parseInt(dateArray[1]);
-    let day = parseInt(dateArray[2]);
-    let hours = parseInt(req.body.event.hours);
-    let minutes = parseInt(req.body.event.minutes);
-    let seconds = parseInt(req.body.event.seconds);
-    let newDate = new Date(year, month, day, hours, minutes, seconds);
-    let type = req.body.event.type;
-    let venue = req.body.event.venue;
-    let distance = parseInt(req.body.event.distance);
-    let notes = req.body.event.notes;
-    let event = {
-        date: newDate,
-        type: type,
-        venue: venue,
-        distance: distance,
-        notes: notes
-    };
+    //Parse the event
+    let updatedEvent = ParseEvent(req.body.event);
     //Find item by the id and update it
-    Event.findByIdAndUpdate(req.params.id, event, (err, updatedEvent) => {
+    Event.findByIdAndUpdate(req.params.id, updatedEvent, (err, event) => {
         if (err) {
             console.log('Error occurred during updating event');
             res.redirect('/events');
         }
         else {
             //redirect back to SHOW route to show update on specific item
-            console.log(updatedEvent);
             res.redirect('/events/' + req.params.id);
         }
     });

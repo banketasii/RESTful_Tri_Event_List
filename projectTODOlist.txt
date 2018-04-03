@@ -36,6 +36,7 @@
       - Shows all info
       - Can change the contents of each field
       - Button to save changes
+      - Time problem.  Time gets changed.
 
     - new.ejs
       - Shows a new form
@@ -58,7 +59,11 @@
       - Edit
       - Create
       - Update
-        
+  - Code refactor
+    - app.js
+      - parse event
+      
+      
 @Incomplete
   - HTML file
   - Custom CSS file
@@ -83,8 +88,7 @@
 
     - edit.ejs
       - Refactor date code
-      - Add styling
-      - Time problem.  Time gets changed.
+      - Add styling      
       
     - new.ejs
       - Add styling
@@ -93,3 +97,4 @@
   - Database
     - Add databse code
       - Destroy
+  
