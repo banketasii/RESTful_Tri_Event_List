@@ -105,36 +105,12 @@ app.route("/events")
         }
         else {
             console.log("Events have been found");
-            res.render('index', { events: events });
+            res.render("index", { events: events });
         }
     });
 })
     .post((req, res) => {
-    //@TODO - Need to refactor this.  I am sure this will not be the only place this code is needed
-    //  let date: string = req.body.event.date;
-    //  let dateArray: string[] = date.split('-');
-    //  let year : number = parseInt(dateArray[0]);
-    //  let month : number = parseInt(dateArray[1]);
-    //  let day : number = parseInt(dateArray[2]);
-    //  let hours: number = parseInt(req.body.event.hours);
-    //  let minutes: number = parseInt(req.body.event.minutes);
-    //  let seconds: number = parseInt(req.body.event.seconds);
-    //  let newDate: Date = new Date(year, month, day, hours, minutes, seconds);
-    //  
-    //  let type: string = req.body.event.type;
-    //  let venue: string = req.body.event.venue;
-    //  let distance: number = parseInt(req.body.event.distance);
-    //  
-    //  let notes: string = req.body.event.notes;
-    //    
-    //  let newEvent: I_Event = {
-    //    date: newDate,
-    //    type: type,
-    //    venue: venue,
-    //    distance: distance,
-    //    notes: notes
-    //  };
-    //  
+    //Parse the event
     let newEvent = ParseEvent(req.body.event);
     Event.create(newEvent, (err, event) => {
         if (err) {
@@ -145,7 +121,7 @@ app.route("/events")
             console.log("Event successfully added");
             console.log(event);
             //#3 - redirect back to events page
-            res.redirect('/events');
+            res.redirect("/events");
         }
     });
 });
@@ -154,7 +130,7 @@ app.route("/events/new")
     .get((req, res) => {
     res.render("new");
 });
-//*** Route - Show, Update
+//*** Route - Show, Update, Destroy
 app.route("/events/:id")
     .get((req, res) => {
     /*Find the event with provided id
@@ -165,7 +141,7 @@ app.route("/events/:id")
             console.log(err);
         }
         else {
-            res.render('show', { event: event });
+            res.render("show", { event: event });
         }
     });
 })
@@ -175,12 +151,25 @@ app.route("/events/:id")
     //Find item by the id and update it
     Event.findByIdAndUpdate(req.params.id, updatedEvent, (err, event) => {
         if (err) {
-            console.log('Error occurred during updating event');
-            res.redirect('/events');
+            console.log("Error occurred during updating event");
+            res.redirect("/events");
         }
         else {
             //redirect back to SHOW route to show update on specific item
-            res.redirect('/events/' + req.params.id);
+            res.redirect("/events/" + req.params.id);
+        }
+    });
+})
+    .delete((req, res) => {
+    //Find item by the id and remove it
+    Event.findByIdAndRemove(req.params.id, (err) => {
+        if (err) {
+            console.log("Error occurred during deleting event");
+            res.redirect("/events");
+        }
+        else {
+            //redirect back to INDEX route to show update on remaining items
+            res.redirect("/events");
         }
     });
 });
@@ -190,12 +179,12 @@ app.route("/events/:id/edit")
     //Find the specific item by id
     Event.findById(req.params.id, (err, foundEvent) => {
         if (err) {
-            console.log('Error occurred during finding event to edit');
-            res.redirect('/events');
+            console.log("Error occurred during finding event to edit");
+            res.redirect("/events");
         }
         else {
             //render edit.ejs with form filled out using contents of found item {edit.ejs variable : app.js variable}
-            res.render('edit', { event: foundEvent });
+            res.render("edit", { event: foundEvent });
         }
     });
 });

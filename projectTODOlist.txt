@@ -16,6 +16,7 @@
         - Edit
         - Create
         - Update
+        - Destroy
         
   - EJS files  
     - index.ejs
@@ -29,6 +30,7 @@
         - Date, type, venue, distance, time and description
         - Button to edit event
         - Button to go back to event list
+      - Button to remove event
 
     - edit.ejs
       - Shows a form
@@ -49,6 +51,7 @@
       - Text area
         - Description about event
       - Button to save event
+      
   - Database
     - created the event schema
     - compiled event schema into the event model.
@@ -59,6 +62,8 @@
       - Edit
       - Create
       - Update
+      - Destroy
+      
   - Code refactor
     - app.js
       - parse event
@@ -66,7 +71,9 @@
       
 @Incomplete
   - HTML file
+  
   - Custom CSS file
+  
   - Custom JS files - Plain js  No libraries
     - Frontend js
     - app.js
@@ -75,15 +82,15 @@
         - Destroy
 
   - Installing needed technologies
+  
   - Folder structure  
+  
   - EJS files  
     - index.ejs
-      - ???Button to remove event???
       - ???Searchable by date and/or type???
       - Add styling
       
-    - show.ejs
-      - ???Button to remove event???
+    - show.ejs      
       - Add styling
 
     - edit.ejs
@@ -92,9 +99,3 @@
       
     - new.ejs
       - Add styling
-  - RESTful Routes
-    - Destroy
-  - Database
-    - Add databse code
-      - Destroy
-  
