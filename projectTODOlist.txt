@@ -50,7 +50,14 @@
       - Button to save event
   - Database
     - created the event schema
-    - compoiles event schema into the event model.
+    - compiled event schema into the event model.
+    - added database code
+      - Index
+      - Show
+      - New
+      - Edit
+      - Create
+      - Update
         
 @Incomplete
   - HTML file
@@ -77,8 +84,12 @@
     - edit.ejs
       - Refactor date code
       - Add styling
+      - Time problem.  Time gets changed.
       
     - new.ejs
       - Add styling
+  - RESTful Routes
+    - Destroy
   - Database
-    - Add databse code to all routes
+    - Add databse code
+      - Destroy

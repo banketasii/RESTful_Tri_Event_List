@@ -6,6 +6,8 @@ let mongoose = require("mongoose");
 let bodyParser = require("body-parser");
 let methodOverride = require("method-override");
 let app = express();
+//Connect to mongo db
+mongoose.connect("mongodb://localhost/tri_event_list");
 //Set up the app to fully qualify .ejs file extension
 app.set("view engine", "ejs");
 //Set up the app to serve contents of public\
@@ -24,6 +26,25 @@ let eventSchema = new mongoose.Schema({
 });
 //Compile schema into a model
 let Event = mongoose.model("Event", eventSchema);
+//Loading the database with a couple of events
+//Event.create(
+//  {
+//    date: new Date(2017, 7, 4, 0, 45, 5),
+//    type: "Run",
+//    venue: "Home",
+//    distance: 4.0,
+//    notes: "Stretch a bit more.  Even though this was a short run, the calves started tightening up"
+//  },
+//  (err:monMod.Error, event:I_Event)=>{
+//    if(err){
+//      console.log("Error creating event")
+//      console.log(err);
+//    }else{
+//      console.log("Event save successfull");
+//      console.log(event);
+//    }
+//  }
+//);
 //Test data
 let date1 = new Date(2017, 7, 4, 0, 45, 5);
 let date2 = new Date(2017, 8, 23, 7, 23, 54);
@@ -51,7 +72,17 @@ app.route("/")
 //*** Route - Index, Create
 app.route("/events")
     .get((req, res) => {
-    res.render("index", { events: events });
+    //Get all events from the db
+    Event.find({}, (err, events) => {
+        if (err) {
+            console.log("There was an error finding the events");
+            console.log(err);
+        }
+        else {
+            console.log("Events have been found");
+            res.render('index', { events: events });
+        }
+    });
 })
     .post((req, res) => {
     //@TODO - Need to refactor this.  I am sure this will not be the only place this code is needed
@@ -75,8 +106,18 @@ app.route("/events")
         distance: distance,
         notes: notes
     };
-    events.push(newEvent);
-    res.redirect("/events");
+    Event.create(newEvent, (err, event) => {
+        if (err) {
+            console.log("There was an error creating/adding event");
+            console.log(err);
+        }
+        else {
+            console.log("Event successfully added");
+            console.log(event);
+            //#3 - redirect back to events page
+            res.redirect('/events');
+        }
+    });
 });
 //*** Route - New
 app.route("/events/new")
@@ -86,15 +127,45 @@ app.route("/events/new")
 //*** Route - Show, Update
 app.route("/events/:id")
     .get((req, res) => {
-    res.render("show", { event: events[0] });
+    /*Find the event with provided id
+      render show.ejs template with that event */
+    Event.findById(req.params.id, (err, event) => {
+        if (err) {
+            console.log("An error occured while finding event");
+            console.log(err);
+        }
+        else {
+            res.render('show', { event: event });
+        }
+    });
 })
     .put((req, res) => {
-    res.redirect("/events/<some_id>");
+    //Find item by the id and update it
+    Event.findByIdAndUpdate(req.params.id, req.body.event, (err, updatedEvent) => {
+        if (err) {
+            console.log('Error occurred during updating event');
+            res.redirect('/events');
+        }
+        else {
+            //redirect back to SHOW route to show update on specific item
+            res.redirect('/events/' + req.params.id);
+        }
+    });
 });
 //*** Route - Edit
 app.route("/events/:id/edit")
     .get((req, res) => {
-    res.render("edit", { event: events[0] });
+    //Find the specific item by id
+    Event.findById(req.params.id, (err, foundEvent) => {
+        if (err) {
+            console.log('Error occurred during finding event to edit');
+            res.redirect('/events');
+        }
+        else {
+            //render edit.ejs with form filled out using contents of found item {edit.ejs variable : app.js variable}
+            res.render('edit', { event: foundEvent });
+        }
+    });
 });
 //*** Route - Catch-All
 app.route("*")

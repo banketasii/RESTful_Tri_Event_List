@@ -12,7 +12,7 @@
       </span> 
       <%= events[i]["date"].toLocaleDateString() %> :: <%= events[i]["type"] %> :: <%= events[i]["distance"] %> mi
   <!--    <img class="event-icon img-fluid" id="swimIcon">-->
-      <a href="/events/<some_id>">View Event</a>
+      <a href="/events/<%= events[i]["_id"] %>">View Event</a>
     </li>
   <% } %>
 </ul>
