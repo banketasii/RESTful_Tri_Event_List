@@ -77,9 +77,6 @@
   - Custom JS files - Plain js  No libraries
     - Frontend js
     - app.js
-      - Add db
-      - RESTful Routes
-        - Destroy
 
   - Installing needed technologies
   

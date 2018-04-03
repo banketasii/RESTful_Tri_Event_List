@@ -10,7 +10,7 @@
     - Mongoose database framework
     - Node server framework
     - Express web framework
-    - 
+    
   - User enters
     - Date in mm/dd/yy format
     - Event type ex. swim, jog, etc...
@@ -18,13 +18,16 @@
     - Distance in miles
     - Total time in hh:mm:ss
     - Description about event
+  
   - App Displays
     - Landing Page
       - Date , event type and distance
       - ???Search option by date and or event type???
     - Event Show Page
       - Date, event type, event venue, distance, time and description
+  
   - User can
+    - Create event
     - Edit event
     - Remove event
   
