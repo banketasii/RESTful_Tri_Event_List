@@ -46,24 +46,25 @@ let Event = mongoose.model("Event", eventSchema);
 //  }
 //);
 //Test data
-let date1 = new Date(2017, 7, 4, 0, 45, 5);
-let date2 = new Date(2017, 8, 23, 7, 23, 54);
-let events = [
-    {
-        date: date1,
-        type: "Sprint Tri",
-        venue: "Lake Blackshear",
-        distance: 13.1,
-        notes: "Need to work on transitions"
-    },
-    {
-        date: date2,
-        type: "Bike",
-        venue: "Cheehaw Park",
-        distance: 100,
-        notes: "Need work on hills"
-    }
-];
+//let date1: Date = new Date(2017, 7, 4, 0, 45, 5);
+//let date2: Date = new Date(2017, 8, 23, 7, 23, 54);
+//let events:I_Event[] = 
+//    [
+//      {
+//        date: date1,
+//        type: "Sprint Tri",
+//        venue: "Lake Blackshear",
+//        distance: 13.1,
+//        notes: "Need to work on transitions"
+//      },
+//      {
+//        date: date2,
+//        type: "Bike",
+//        venue: "Cheehaw Park",
+//        distance: 100,
+//        notes: "Need work on hills"
+//      }
+//    ];
 //RESTful Routes
 app.route("/")
     .get((req, res) => {
@@ -140,14 +141,35 @@ app.route("/events/:id")
     });
 })
     .put((req, res) => {
+    let date = req.body.event.date;
+    let dateArray = date.split('-');
+    let year = parseInt(dateArray[0]);
+    let month = parseInt(dateArray[1]);
+    let day = parseInt(dateArray[2]);
+    let hours = parseInt(req.body.event.hours);
+    let minutes = parseInt(req.body.event.minutes);
+    let seconds = parseInt(req.body.event.seconds);
+    let newDate = new Date(year, month, day, hours, minutes, seconds);
+    let type = req.body.event.type;
+    let venue = req.body.event.venue;
+    let distance = parseInt(req.body.event.distance);
+    let notes = req.body.event.notes;
+    let event = {
+        date: newDate,
+        type: type,
+        venue: venue,
+        distance: distance,
+        notes: notes
+    };
     //Find item by the id and update it
-    Event.findByIdAndUpdate(req.params.id, req.body.event, (err, updatedEvent) => {
+    Event.findByIdAndUpdate(req.params.id, event, (err, updatedEvent) => {
         if (err) {
             console.log('Error occurred during updating event');
             res.redirect('/events');
         }
         else {
             //redirect back to SHOW route to show update on specific item
+            console.log(updatedEvent);
             res.redirect('/events/' + req.params.id);
         }
     });
