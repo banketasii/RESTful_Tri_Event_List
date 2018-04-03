@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 //Setting up the app
 let express = require("express");
+let mongoose = require("mongoose");
 let bodyParser = require("body-parser");
 let methodOverride = require("method-override");
 let app = express();
@@ -13,6 +14,16 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 //Set up the app to use method-override
 app.use(methodOverride("_method"));
+//Setting up database schema
+let eventSchema = new mongoose.Schema({
+    date: Date,
+    type: String,
+    venue: String,
+    distance: Number,
+    notes: String
+});
+//Compile schema into a model
+let Event = mongoose.model("Event", eventSchema);
 //Test data
 let date1 = new Date(2017, 7, 4, 0, 45, 5);
 let date2 = new Date(2017, 8, 23, 7, 23, 54);

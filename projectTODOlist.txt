@@ -4,6 +4,7 @@
     - ejs
     - body-parser
     - method-override
+    - mongoose
     
   - JS files
     - app.js
@@ -47,6 +48,9 @@
       - Text area
         - Description about event
       - Button to save event
+  - Database
+    - created the event schema
+    - compoiles event schema into the event model.
         
 @Incomplete
   - HTML file
@@ -76,3 +80,5 @@
       
     - new.ejs
       - Add styling
+  - Database
+    - Add databse code to all routes
