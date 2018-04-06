@@ -1,7 +1,7 @@
 /* Tri Event List Project CSS */
 
 /* CSS HTML tag selectors */
-/*
+
 html, body{
   text-align: center;
   width: 100%;
@@ -42,12 +42,11 @@ li{
 }
 
 li:nth-child(2n){
-  background-color: #f7f7f7;
+  background-color: #f3f300;
 }
 
-li:hover .del-event-btn{
-  width: 40px;
-  opacity: 1;
+li:hover{
+  background-color: #00ff00;
 }
 
 img{
@@ -56,20 +55,26 @@ img{
   background-repeat: no-repeat no-repeat;
 }
 
-a{
-  display: block;
-  color: black;
-}
 */
 
 /* CSS HTML class selectors */
-/*
+
 .container{
   width: 100%;
   height: 100%;
   margin-top: 10%;
 }
 
+.a-pageItem{
+  display: block;
+  color: black;
+}
+
+
+.a-listItem{
+  display: inline;
+  float: left;
+}
 .add-event-btn{
   float: right;
   margin-top: 5px;
@@ -112,7 +117,7 @@ a{
 */
 
 /* CSS HTML id selectors */
-/*
+
 #event-lstbox{
   width: 50%;
   margin-left: 25%;
@@ -140,19 +145,19 @@ a{
 }
 
 #runIcon{
-  background-image: url("../imgs/iconRun.svg");
+  background-image: url("/images/iconRun.svg");
 }
 
 #swimIcon{
-  background-image: url("../imgs/iconSwim.svg");
+  background-image: url("/images/iconSwim.svg");
 }
 
 #bikeIcon{
-  background-image: url("../imgs/iconBike.svg");
+  background-image: url("/images/iconBike.svg");
 }
 
 #finishIcon{
-  background-image: url("../imgs/iconFinish.svg");
+  background-image: url("/images/iconFinish.svg");
 }
 
 #footer-content{
@@ -168,13 +173,13 @@ a{
 }
 
 #swim{
-  background-image: url(../imgs/imageSwim.png);  
+  background-image: url(/images/imageSwim.png);  
 }
 
 #bike{
-  background-image: url(../imgs/imageBike.png);  
+  background-image: url(/images/imageBike.png);  
 }
 
 #run{
-  background-image: url(../imgs/imageRun.png);  
-}*/
+  background-image: url(/images/imageRun.png);  
+}

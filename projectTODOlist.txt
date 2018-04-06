@@ -96,3 +96,7 @@
       
     - new.ejs
       - Add styling
+      
+    - header.ejs
+    
+    - footer.ejs

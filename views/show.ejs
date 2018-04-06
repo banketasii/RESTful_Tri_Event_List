@@ -1,3 +1,4 @@
+<% include ./partials/header %>
 <h1>SHOW.EJS</h1>
 
 <label>Event Date: </label>
@@ -37,4 +38,4 @@
 <form action='/events/<%= event['_id'] %>?_method=DELETE' method='POST'>
   <button type="submit">Delete Event</button>
 </form>
-
+<% include ./partials/footer %>

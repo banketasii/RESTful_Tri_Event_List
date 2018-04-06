@@ -1,19 +1,46 @@
+<% include ./partials/header %>
+
 <h1>INDEX.EJS</h1>
 
 <form action="/events/new" method="GET">
   <button type="submit">New Event</button>
 </form>
 
-<ul>
-  <% for(let i = 0; i < events.length; i++) { %>
-    <li>
-      <span class="del-event-btn">
-  <!--      <i class="fas fa-trash-alt"></i>-->
-      </span> 
-      <%= events[i]["date"].toLocaleDateString() %> :: <%= events[i]["type"] %> :: <%= events[i]["distance"] %> mi
-  <!--    <img class="event-icon img-fluid" id="swimIcon">-->
-      <a href="/events/<%= events[i]["_id"] %>">View Event</a>
-    </li>
-  <% } %>
-</ul>
-
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-lg-1"></div>    
+    <div class="col-12 col-lg-10">
+      <div class="event-lstbox">
+        <h1 id="event-lstbox-header">TRI Event List</h1>
+        <ul id="eventlist">
+          <% for(let i = 0; i < events.length; i++) { %>
+            <li>
+              <a class="a-listItem" href="/events/<%= events[i]["_id"] %>">View Event</a>
+              <%= events[i]["date"].toLocaleDateString() %> :: <%= events[i]["type"] %> :: <%= events[i]["distance"] %> mi
+          <!--    <img class="event-icon img-fluid" id="swimIcon">-->
+              
+            </li>
+          <% } %>
+        </ul>
+      </div>
+    </div>
+    <div class="col-12 col-lg-1"></div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-lg-1"></div>
+    <div class="col-12 col-lg-10">
+      <div id="footer-content">        
+        <p id="motto" class="h1">Keep on TRI-ing</p>
+        <img class="footer-img img-fluid" id="swim">
+        <img class="footer-img img-fluid" id="bike">
+        <img class="footer-img img-fluid" id="run">    
+        <div class="credit">
+          <a class="a-pageItem" href="https://icons8.com">Icon pack by Icons8</a>
+          <a class="a-pageItem" href="https://pixabay.com/">Images by pixabay</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-1"></div>
+  </div>
+</div>
+<% include ./partials/footer %>

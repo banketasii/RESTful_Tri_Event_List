@@ -189,10 +189,11 @@ app.route("/events/:id/edit")
     });
 });
 //*** Route - Catch-All
-app.route("*")
-    .get((req, res) => {
-    res.send("This is the tri events list catch-all route!");
-});
+//app.route("*")
+// Catch-All
+//.get((req:expMod.Request, res:expMod.Response) => {
+//  res.send("This is the tri events list catch-all route!");
+//});
 //Server Listener
 app.listen(3000, () => {
     console.log("Tri Event List Server is listening on port 3000");
