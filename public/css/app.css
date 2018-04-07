@@ -68,14 +68,20 @@ img{
   color: black;
 }
 
+.a-addButton{
+  color: black;
+  float: right;
+  margin-top: 5px;
+}
+
+.a-addButton:hover{
+  color: #00ff00;
+}
+
 
 .a-listItem{
   display: inline;
   float: left;
-}
-.add-event-btn{
-  float: right;
-  margin-top: 5px;
 }
 
 .del-event-btn{
@@ -156,6 +162,8 @@ img{
 }
 
 /* CSS HTML id selectors */
+
+
 #footer-content{
   text-align: center;
   margin-top: 10%;
@@ -177,5 +185,5 @@ img{
 }
 
 #run{
-  background-image: url(/images/imageRun.png);  
+  background-image: url(/images/imageRun.png);
 }

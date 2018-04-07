@@ -1,7 +1,6 @@
 "use strict";
 /* RESTful Tri Event List JS */
 console.log("Testing from trieventlist.js file");
-//let ul: HTMLCollectionOf<Element> = document.getElementsByClassName("eventlist");
 let lis = document.getElementsByTagName("li");
 let liClass = "a-listItem";
 let liHref = "/events/<%= events[i]['_id'] %>";
