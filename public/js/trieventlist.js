@@ -1,14 +1,14 @@
 "use strict";
 /* RESTful Tri Event List JS */
 console.log("Testing from trieventlist.js file");
-let ul = document.getElementById("eventlist");
+//let ul: HTMLCollectionOf<Element> = document.getElementsByClassName("eventlist");
 let lis = document.getElementsByTagName("li");
 let liClass = "a-listItem";
 let liHref = "/events/<%= events[i]['_id'] %>";
 let liText = "View Event";
 for (let i = 0; i < lis.length; i++) {
     let htmlAddon = "";
-    let htmlAddonBeg = "<img class='event-icon img-fluid' id='";
+    let htmlAddonBeg = "<img class='event-icon img-fluid ";
     let htmlAddonEnd = "'>";
     if (lis[i].innerText.toLocaleLowerCase().includes("run") || lis[i].innerText.toLocaleLowerCase().includes("jog")) {
         htmlAddon = htmlAddonBeg + "runIcon" + htmlAddonEnd;

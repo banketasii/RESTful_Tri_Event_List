@@ -114,52 +114,50 @@ img{
 .credit{
   margin-top: 100px;
 }
-*/
 
-/* CSS HTML id selectors */
-
-#event-lstbox{
+.event-lstbox{
   width: 50%;
   margin-left: 25%;
   border-radius: 10px;
 }
 
-#event-lstbox-header{
+.event-lstbox-header{
   border: 2px solid blue;
   border-radius: 10px;
   margin: 0;
   text-align: center;
 }
 
-#event-lstbox-txtbox{
+.event-lstbox-txtbox{
   font-size: 18px;
   background-color: #f7f7f7;
   width: 100%;
   border-radius: 10px;
 }
 
-#event-lstbox-txtbox:focus{
+.event-lstbox-txtbox:focus{
   background-color: #fff;
   border: 2px solid red;
   outline: none;
 }
 
-#runIcon{
+.runIcon{
   background-image: url("/images/iconRun.svg");
 }
 
-#swimIcon{
+.swimIcon{
   background-image: url("/images/iconSwim.svg");
 }
 
-#bikeIcon{
+.bikeIcon{
   background-image: url("/images/iconBike.svg");
 }
 
-#finishIcon{
+.finishIcon{
   background-image: url("/images/iconFinish.svg");
 }
 
+/* CSS HTML id selectors */
 #footer-content{
   text-align: center;
   margin-top: 10%;

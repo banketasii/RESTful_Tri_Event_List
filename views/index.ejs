@@ -1,24 +1,24 @@
 <% include ./partials/header %>
 
-<h1>INDEX.EJS</h1>
+<!--<h1>INDEX.EJS</h1>-->
 
+<!--
 <form action="/events/new" method="GET">
   <button type="submit">New Event</button>
 </form>
+-->
 
 <div class="container">
   <div class="row">
     <div class="col-12 col-lg-1"></div>    
     <div class="col-12 col-lg-10">
       <div class="event-lstbox">
-        <h1 id="event-lstbox-header">TRI Event List</h1>
-        <ul id="eventlist">
+        <h1 class="event-lstbox-header">TRI Event List</h1>
+        <ul class="eventlist">
           <% for(let i = 0; i < events.length; i++) { %>
             <li>
               <a class="a-listItem" href="/events/<%= events[i]["_id"] %>">View Event</a>
               <%= events[i]["date"].toLocaleDateString() %> :: <%= events[i]["type"] %> :: <%= events[i]["distance"] %> mi
-          <!--    <img class="event-icon img-fluid" id="swimIcon">-->
-              
             </li>
           <% } %>
         </ul>
